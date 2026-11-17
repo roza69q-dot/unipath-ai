@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f5">
+  <title>UniPath AI — اختيار مقرراتك</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="UniPath AI"><span class="brand-mark">U</span><span>UniPath <b>AI</b><small>NASLAH TEAM · الجامعة العربية المفتوحة</small></span></a>
+    <div class="top-actions"><span class="demo-pill"><i></i><span data-i18n="demo">نسخة تجريبية</span></span><button id="language" class="language" aria-label="Change language">EN</button></div>
+  </header>
+  <main>
+    <section class="intro">
+      <div class="eyebrow"><span>✦</span><span data-i18n="eyebrow">مساعد بداية الطالب</span></div>
+      <h1 data-i18n="title">اختيار موادك،<br><em>صار أسهل.</em></h1>
+      <p data-i18n="subtitle">للطالب المستجد أو المستمر: اختر تخصصك، حدّد موادك السابقة إن وجدت، ثم شاهد خيارات فصل تجريبية تناسبك.</p>
+      <div class="progress" aria-label="Progress"><div class="progress-label"><span data-i18n="progress">إعداد خطتك</span><span id="progress-count">١ / ٣</span></div><div class="progress-track"><span id="progress-bar"></span></div></div>
+      <aside class="hero-guide" aria-label="UniPath guide preview"><div class="hero-guide-head"><span class="hero-guide-icon">✦</span><span class="hero-guide-title"><b data-i18n="heroGuideTitle">كيف يساعدك المرشد؟</b><small data-i18n="heroGuideSub">من الحيرة إلى خيارات واضحة</small></span><span class="hero-guide-tag" data-i18n="heroGuideTag">٣ خطوات</span></div><div class="hero-steps"><div><i>01</i><span data-i18n="heroStep1">حدد تخصصك</span></div><div><i>02</i><span data-i18n="heroStep2">أخبرنا عن تقدمك</span></div><div><i>03</i><span data-i18n="heroStep3">قارن واختر</span></div></div><div class="hero-guide-foot"><span>✓</span><span data-i18n="heroGuideFoot">كل خيار معه سبب واضح.</span></div></aside>
+    </section>
+    <section class="workspace">
+      <nav class="steps" aria-label="Plan steps">
+        <button class="step active" data-step="1"><span class="step-num">01</span><span data-i18n="step1">الخطة</span><span class="step-check">✓</span></button>
+        <button class="step" data-step="2"><span class="step-num">02</span><span data-i18n="step2">تقدمك</span><span class="step-check">✓</span></button>
+        <button class="step" data-step="3"><span class="step-num">03</span><span data-i18n="step3">تفضيلاتك</span><span class="step-check">✓</span></button>
+      </nav>
+      <div class="panel">
+        <div class="panel-head"><div><span class="section-kicker" id="kicker" data-i18n="kicker1">الخطوة الأولى</span><h2 id="panel-title" data-i18n="panel1">ابدأ بخطتك الدراسية</h2><p id="panel-desc" data-i18n="desc1">حدد برنامجك وإصدار الخطة حتى نعرف المقررات المناسبة لك.</p></div><span class="step-counter" id="step-counter">01 <span>/ 03</span></span></div>
+        <div class="step-content" id="content-1">
+          <label class="field-label" for="program" data-i18n="programLabel">وش تخصصك؟</label>
+          <p class="field-hint" data-i18n="programHint">اختر تخصصك من القائمة. إذا ما لقيته، لا تختار تخصصًا قريبًا منه.</p>
+          <div class="select-wrap"><select id="program"><option value="business">إدارة الأعمال · مثال تجريبي</option><option value="it">تقنية المعلومات · مثال تجريبي</option><option value="unknown">برنامج غير متاح · اختبار نقص البيانات</option></select><span>⌄</span></div>
+          <label class="field-label gap" for="plan" data-i18n="planLabel">إصدار خطتك الدراسية</label>
+          <p class="field-hint" data-i18n="planHint">إذا ما تعرف الإصدار، اترك العينة المحددة. تأكد من خطتك الرسمية قبل التسجيل.</p>
+          <div class="select-wrap"><select id="plan"><option value="2024">2024 · عينة توضيحية</option><option value="2022">2022 · عينة توضيحية</option><option value="conflict">إصدار تجريبي متعارض</option></select><span>⌄</span></div>
+          <div class="data-note"><span>ⓘ</span><span data-i18n="sampleNote">هذه بيانات عرض تجريبية وليست خطة AOU رسمية.</span></div>
+          <div id="plan-alert" class="alert hidden" role="status"></div>
+        </div>
+        <div class="step-content hidden" id="content-2">
+          <div class="subhead"><div><label class="field-label" data-i18n="passedLabel">هل سبق واجتزت مواد؟</label><p data-i18n="passedHint">إذا كنت مستجدًا أو ما اجتزت مواد، اختر «لا» وتابع مباشرة.</p></div><span id="passed-count" class="count-badge">0</span></div>
+          <div class="student-options"><button class="student-option selected" data-progress="new"><span class="option-icon">✦</span><span><b data-i18n="newStudent">أنا مستجد / ما اجتزت مواد</b><small data-i18n="newStudentHint">ابدأ من هنا، ما تحتاج تختار مواد سابقة.</small></span><span class="radio-dot"></span></button><button class="student-option" data-progress="has"><span class="option-icon">✓</span><span><b data-i18n="continuingStudent">اجتزت مواد من قبل</b><small data-i18n="continuingStudentHint">علّم المواد التي نجحت فيها لنتحقق من المتطلبات.</small></span><span class="radio-dot"></span></button></div>
+          <div id="new-student-note" class="new-student-note" data-i18n="newStudentNote">تمام، سنبدأ من مواد المستوى الأول في عينة العرض. القائمة تجريبية ولا تمثل خطة الجامعة الرسمية.</div>
+          <div id="passed-area" class="hidden"><div id="course-list" class="course-list"></div></div>
+          <div class="data-note"><span>ⓘ</span><span data-i18n="sampleNote">هذه بيانات عرض تجريبية وليست خطة AOU رسمية.</span></div>
+          <div id="rules-alert" class="alert warning" role="status"><span>!</span><span data-i18n="rulesNote">قواعد المتطلبات في هذا النموذج توضيحية فقط، وتحتاج إلى توثيق من الجامعة.</span></div>
+        </div>
+        <div class="step-content hidden" id="content-3">
+          <div class="preference-block load-block"><div class="preference-heading"><span class="preference-number">01</span><div><b data-i18n="hoursLabel">كم ساعة تفضل؟</b><small data-i18n="loadSub">ابدأ بالحمل الذي يناسب وقتك</small></div></div>
+          <div class="choice-row" id="hours"><button class="choice" data-val="6">6 <small data-i18n="hours">ساعات</small></button><button class="choice selected" data-val="9">9 <small data-i18n="hours">ساعات</small></button><button class="choice" data-val="12">12 <small data-i18n="hours">ساعة</small></button></div></div>
+          <div class="preference-block"><div class="preference-heading"><span class="preference-number">02</span><div><b data-i18n="paceLabel">إيقاع الفصل</b><small data-i18n="paceSub">ما الوتيرة الأنسب لك؟</small></div></div>
+          <div class="pace-options"><button class="pace" data-val="light"><span class="pace-icon">☁</span><b data-i18n="light">خفيف</b><small data-i18n="lightHint">مساحة أكبر لوقتك</small></button><button class="pace selected" data-val="balanced"><span class="pace-icon">◒</span><b data-i18n="balanced">متوازن</b><small data-i18n="balancedHint">بين الدراسة والحياة</small></button><button class="pace" data-val="intense"><span class="pace-icon">↗</span><b data-i18n="intense">مكثف</b><small data-i18n="intenseHint">تقدم أسرع</small></button></div></div>
+          <div class="preference-block profile-block"><div class="preference-heading"><span class="preference-number">03</span><div><b data-i18n="profileSubhead">ظروفك وهدفك</b><small data-i18n="profileSub">اختياري، ويساعد على ترتيب الاقتراحات</small></div></div><div class="profile-grid">
+            <div class="profile-field"><span class="field-label" data-i18n="employmentLabel">هل تعمل حاليًا؟</span><div class="segmented-choice" id="employment"><button data-val="unspecified" class="selected" data-i18n="workUnspecified">أفضل عدم التحديد</button><button data-val="employed" data-i18n="employed">موظف</button><button data-val="not-employed" data-i18n="notEmployed">غير موظف</button></div></div>
+            <div class="profile-field"><span class="field-label" data-i18n="graduationLabel">وش هدفك من التخرج؟</span><div class="segmented-choice" id="grad-goal"><button data-val="accelerate" data-i18n="accelerate">أبغى أسرّع التخرج</button><button data-val="steady" class="selected" data-i18n="steady">أفضّل حملًا متوازنًا</button></div></div>
+          </div></div>
+          <p class="goal-hint" data-i18n="goalHint">حالة العمل تساعد المرشد على فهم ظروفك، لكنها لا تحدد الحمل عنك. اختر الساعات والإيقاع المناسبين بنفسك.</p>
+          <div class="data-note"><span>✦</span><span data-i18n="personalNote">الترتيب يوازن بين تفضيلاتك وتقدمك، بناءً على بيانات العرض التجريبية.</span></div>
+        </div>
+        <footer class="panel-footer"><button class="back-btn hidden" id="back" data-i18n="back">رجوع</button><span class="footer-hint" data-i18n="privateNote">ما تحتاج تعرف كل التفاصيل الآن.</span><button class="primary-btn" id="next"><span data-i18n="next">التالي</span><span>←</span></button></footer>
+      </div>
+    </section>
+    <section id="results" class="results hidden" aria-live="polite">
+      <div class="result-heading"><div><span class="section-kicker" data-i18n="recommendations">اقتراحاتك الشخصية</span><h2 data-i18n="resultTitle">خيارات تستحق نظرتك</h2><p data-i18n="resultDesc">رتبتها حسب تفضيلاتك والتقدم الذي سجلته.</p></div><button id="edit" class="edit-btn"><span>↻</span><span data-i18n="edit">عدّل اختياراتك</span></button></div>
+      <div class="results-meta"><span id="eligible-count"></span><span class="demo-caption" data-i18n="demoData">بيانات تجريبية</span></div>
+      <div id="goal-summary" class="goal-summary hidden"></div>
+      <div id="recommendation-list" class="recommendation-list"></div>
+      <div id="missing-alert" class="alert warning hidden" role="status"></div>
+      <div class="ai-card"><div class="ai-avatar">✦</div><div class="ai-copy"><b data-i18n="aiTitle">اسأل مساعد UniPath</b><p data-i18n="aiDesc">يساعدك تفهم اختياراتك ويشرح لك الخطوة الجاية. الأهلية يحددها محرك المتطلبات.</p><div class="ai-response hidden" id="ai-response"></div><div class="quick-questions"><button class="quick-question" data-question="why" data-i18n="askWhy">ليش هذا الخيار مناسب لي؟</button><button class="quick-question" data-question="lighter" data-i18n="askLighter">كيف أختار فصلًا أخف؟</button></div><button id="explain" class="text-btn" data-i18n="explain">فسّر لي الترتيب <span>←</span></button></div></div>
+    </section>
+    <div class="footer-brand">صنع بعناية بواسطة <b>Naslah Team</b><span>·</span> UniPath AI</div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
